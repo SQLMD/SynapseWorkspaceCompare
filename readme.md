@@ -15,7 +15,7 @@ Steps to compare two Synapse workspaces:
 
 3) Run the template.py script (it will create most of the folders and store the json objects for each of the resources for workspace 1)
 
-4) Run the template2.py script (it will create most of the folders and store the json objects for each of the resources for workspace 2) [NOTE: I customized these for our two envionments because the managed vnet workspace has some different resources]
+4) Run the template2.py script (it will create most of the folders and store the json objects for each of the resources for workspace 2) [NOTE: I limited the list of objects for the two envionments to keep the example simple.]
 
 5) Run the compare_files.py script. This will create a data/diff.txt file that lists all of the differences and the detail for each of the differences will be in the corresponding folder (e.g. pipelines_diff)
 
