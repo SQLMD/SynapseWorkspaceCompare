@@ -11,7 +11,7 @@
                 "name": "Wait1",
                 "type": "Wait",
                 "typeProperties": {
-                    "waitTimeInSeconds": 500
+                    "waitTimeInSeconds": 300
                 }
             }
         ],

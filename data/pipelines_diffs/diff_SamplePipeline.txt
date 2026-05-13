@@ -5,7 +5,7 @@
                  "type": "Wait",
                  "typeProperties": {
 -                    "waitTimeInSeconds": 5
-+                    "waitTimeInSeconds": 500
++                    "waitTimeInSeconds": 300
                  }
              }
          ],
