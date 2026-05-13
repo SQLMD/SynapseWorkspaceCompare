@@ -1,0 +1,20 @@
+{
+    "type": "Microsoft.Synapse/workspaces/pipelines",
+    "apiVersion": "2020-12-01",
+    "name": "[concat(parameters('workspaceName'), '/SamplePipeline')]",
+    "dependsOn": [
+        "[concat(parameters('workspaceName'), '/MyDataset')]"
+    ],
+    "properties": {
+        "activities": [
+            {
+                "name": "Wait1",
+                "type": "Wait",
+                "typeProperties": {
+                    "waitTimeInSeconds": 500
+                }
+            }
+        ],
+        "annotations": []
+    }
+}

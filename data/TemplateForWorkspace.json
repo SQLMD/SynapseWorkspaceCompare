@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workspaceName": { "type": "string", "defaultValue": "my-synapse-workspace" },
+        "storageConnectionString": { "type": "secureString" }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Synapse/workspaces/linkedServices",
+            "apiVersion": "2020-12-01",
+            "name": "[concat(parameters('workspaceName'), '/AzureBlobStorage1')]",
+            "properties": {
+                "type": "AzureBlobStorage",
+                "typeProperties": { "connectionString": "[parameters('storageConnectionString')]" }
+            }
+        },
+        {
+            "type": "Microsoft.Synapse/workspaces/datasets",
+            "apiVersion": "2020-12-01",
+            "name": "[concat(parameters('workspaceName'), '/MyDataset')]",
+            "dependsOn": [ "[concat(parameters('workspaceName'), '/AzureBlobStorage1')]" ],
+            "properties": {
+                "linkedServiceName": { "referenceName": "AzureBlobStorage1", "type": "LinkedServiceReference" },
+                "type": "Binary",
+                "typeProperties": { "location": { "type": "AzureBlobStorageLocation", "container": "sample-data" } }
+            }
+        },
+        {
+            "type": "Microsoft.Synapse/workspaces/pipelines",
+            "apiVersion": "2020-12-01",
+            "name": "[concat(parameters('workspaceName'), '/SamplePipeline')]",
+            "dependsOn": [ "[concat(parameters('workspaceName'), '/MyDataset')]" ],
+            "properties": {
+                "activities": [
+                    {
+                        "name": "Wait1",
+                        "type": "Wait",
+                        "typeProperties": { "waitTimeInSeconds": 5 }
+                    }
+                ],
+                "annotations": []
+            }
+        }
+    ]
+}

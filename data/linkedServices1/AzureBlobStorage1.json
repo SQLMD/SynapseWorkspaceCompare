@@ -1,0 +1,11 @@
+{
+    "type": "Microsoft.Synapse/workspaces/linkedServices",
+    "apiVersion": "2020-12-01",
+    "name": "[concat(parameters('workspaceName'), '/AzureBlobStorage1')]",
+    "properties": {
+        "type": "AzureBlobStorage",
+        "typeProperties": {
+            "connectionString": "[parameters('storageConnectionString')]"
+        }
+    }
+}

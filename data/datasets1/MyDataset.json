@@ -1,0 +1,21 @@
+{
+    "type": "Microsoft.Synapse/workspaces/datasets",
+    "apiVersion": "2020-12-01",
+    "name": "[concat(parameters('workspaceName'), '/MyDataset')]",
+    "dependsOn": [
+        "[concat(parameters('workspaceName'), '/AzureBlobStorage1')]"
+    ],
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "AzureBlobStorage1",
+            "type": "LinkedServiceReference"
+        },
+        "type": "Binary",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobStorageLocation",
+                "container": "sample-data"
+            }
+        }
+    }
+}
