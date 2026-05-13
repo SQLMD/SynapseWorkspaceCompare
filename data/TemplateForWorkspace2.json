@@ -36,7 +36,7 @@
                     {
                         "name": "Wait1",
                         "type": "Wait",
-                        "typeProperties": { "waitTimeInSeconds": 500 }
+                        "typeProperties": { "waitTimeInSeconds": 300 }
                     }
                 ],
                 "annotations": []

@@ -5,11 +5,11 @@ $ python -m pip install --user difflib
 
 Steps to compare two Synapse workspaces:
 
-1) Copy the ARM template for Workspace 1 from the Azure Repo workspace_publish branch : https://dev.azure.com/BannerBankCorp-LDW/_git/LDW?path=/ldw-dev-synapse/TemplateForWorkspace.json
+1) Copy the ARM template for Workspace 1 from the Azure Repo workspace_publish branch 
 
  Save it in a folder called Data that is a sub-directory of the directory with the python scripts as data/TemplateForWorkspace.json.
 
-2) Copy the ARM template for Workspace 2 from the Azure Repo workspace_publish branch : https://dev.azure.com/BannerBankCorp-LDW/LDW/_git/LDW-Synapse?path=/ldw-dev-synapse-2/TemplateForWorkspace.json
+2) Copy the ARM template for Workspace 2 from the Azure Repo workspace_publish branch 
 
  Save it in a folder called Data that is a sub-directory of the directory with the python scripts data/TemplateForWorkspace2.json.
 
